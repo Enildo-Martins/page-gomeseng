@@ -1,36 +1,57 @@
+import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
-import { Building, Construction, Wrench, MapPin, Shield, Users } from "lucide-react";
 
+// Importando as imagens dos serviços
+import usinas from '../assets/servico-usinas.jpg';
+import topografia from '../assets/servico-topografia.jpg';
+import drenagem from '../assets/servico-drenagem.jpg';
+import linhas from '../assets/servico-linhas-transmissao.jpg';
+import obraCivil from '../assets/servico-obra-civil.jpg';
+import infraestrutura from '../assets/servico-infraestrutura.jpg';
+import terraplanagem from '../assets/servico-terraplanagem.jpg';
+import hidrossemeadura from '../assets/servico-hidrossemeadura.jpg';
+
+// Lista de serviços baseada no portfólio do cliente
 const services = [
   {
-    icon: Building,
-    title: "Structural Engineering",
-    description: "Design and analysis of buildings, bridges, and other structures to ensure safety and durability."
+    image: usinas,
+    title: "Infraestrutura Para Usinas Fotovoltaicas",
+    description: "Execução completa de terraplanagem, drenagem e obras civis para usinas fotovoltaicas."
   },
   {
-    icon: Construction,
-    title: "Infrastructure Design",
-    description: "Planning and design of roads, bridges, water systems, and other critical infrastructure projects."
+    image: topografia,
+    title: "Topografia",
+    description: "Serviços de agrimensura e levantamentos topográficos de alta precisão para seus projetos."
   },
   {
-    icon: Wrench,
-    title: "Construction Management",
-    description: "Project oversight from conception to completion, ensuring quality, timeline, and budget adherence."
+    image: drenagem,
+    title: "Drenagem",
+    description: "Projetos e implementação de sistemas de drenagem eficientes para controle de águas pluviais."
   },
   {
-    icon: MapPin,
-    title: "Site Development",
-    description: "Land development planning, grading, drainage, and utility design for residential and commercial sites."
+    image: linhas,
+    title: "Obras de Linha de Transmissão",
+    description: "Construção e manutenção de infraestrutura para linhas de transmissão de energia."
   },
   {
-    icon: Shield,
-    title: "Safety Assessment",
-    description: "Comprehensive structural inspections and safety evaluations for existing buildings and infrastructure."
+    image: obraCivil,
+    title: "Obra Civil",
+    description: "Construções civis em geral, incluindo fundações, cabines de medição e estruturas de concreto."
   },
   {
-    icon: Users,
-    title: "Consulting Services",
-    description: "Expert consultation on engineering challenges, code compliance, and project feasibility studies."
+    image: infraestrutura,
+    title: "Infraestrutura",
+    description: "Desenvolvimento de projetos de infraestrutura complexos, garantindo durabilidade e segurança."
+  },
+  {
+    image: terraplanagem,
+    title: "Terraplanagem",
+    description: "Serviços de movimentação de terra, nivelamento e preparação de terrenos para construção."
+  },
+  {
+    image: hidrossemeadura,
+    title: "Hidrossemeadura",
+    description: "Técnica de plantio para controle de erosão e revegetação de taludes e áreas degradadas."
   }
 ];
 
@@ -39,26 +60,29 @@ export function Services() {
     <section id="services" className="py-20 bg-secondary/50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">Our Services</h2>
+          <h2 className="text-4xl font-bold mb-4">Conheça Nossos Serviços</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Comprehensive civil engineering solutions for all your construction and infrastructure needs
+            Soluções completas e de alta qualidade em engenharia civil e agrimensura para o seu projeto.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className="bg-white border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-              <CardHeader>
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <service.icon className="w-6 h-6 text-primary" />
-                </div>
-                <CardTitle className="text-xl">{service.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-muted-foreground">
-                  {service.description}
-                </CardDescription>
+            <Card key={index} className="bg-white border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col">
+              <div className="aspect-video overflow-hidden">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              {/* ===== INÍCIO DA ALTERAÇÃO ===== */}
+              {/* Agora o título e a descrição estão juntos no CardContent para um layout mais coeso */}
+              <CardContent className="p-6 flex flex-col flex-grow">
+                <h3 className="font-semibold text-lg mb-2 flex-grow">{service.title}</h3>
+                <p className="text-muted-foreground text-sm">{service.description}</p>
               </CardContent>
+              {/* ===== FIM DA ALTERAÇÃO ===== */}
             </Card>
           ))}
         </div>
