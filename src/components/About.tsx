@@ -2,18 +2,12 @@ import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 import { CheckCircle, Award, Users, Calendar } from "lucide-react";
 
+// Informações extraídas do portfólio
 const achievements = [
-  { icon: CheckCircle, number: "500+", label: "Projects Completed" },
-  { icon: Award, number: "15+", label: "Years Experience" },
-  { icon: Users, number: "50+", label: "Happy Clients" },
-  { icon: Calendar, number: "24/7", label: "Support Available" }
-];
-
-const certifications = [
-  "Professional Engineer (PE)",
-  "LEED Accredited Professional",
-  "Project Management Professional (PMP)",
-  "OSHA 30-Hour Certification"
+  { icon: Award, number: "8+", label: "Anos no Mercado" },
+  { icon: Users, number: "50+", label: "Clientes Satisfeitos" }, // Mantido como exemplo, pode ser alterado
+  { icon: CheckCircle, number: "500+", label: "Projetos Concluídos" }, // Mantido como exemplo, pode ser alterado
+  { icon: Calendar, number: "24/7", label: "Suporte Disponível" } // Mantido como exemplo, pode ser alterado
 ];
 
 export function About() {
@@ -22,46 +16,18 @@ export function About() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-4xl font-bold mb-6">About Our Engineering Excellence</h2>
+            <h2 className="text-4xl font-bold mb-6">Quem Somos?</h2>
             <p className="text-lg text-muted-foreground mb-8">
-              With over 15 years of experience in civil engineering, we specialize in delivering 
-              innovative and sustainable solutions for complex infrastructure challenges. Our team 
-              combines technical expertise with creative problem-solving to ensure every project 
-              meets the highest standards of quality and safety.
+              Somos uma empresa consolidada a mais de 8 anos no mercado, nossa missão é proporcionar excelência em serviços de engenharia civil e agrimensura, com foco destacado em topografia, terraplanagem, drenagem e construções civis em usinas fotovoltaicas. Contamos com uma equipe altamente qualificada e comprometida, dedicada a superar expectativas e garantir que cada projeto seja uma expressão de qualidade e compromisso inabalável.
+            </p>
+            <p className="text-lg text-muted-foreground mb-8">
+              Buscamos constantemente elevar o padrão de nossos serviços, proporcionando experiências excepcionais em cada empreendimento e tudo é realizado no mais alto padrão de segurança, saúde e meio ambiente. Assim, solidificamos a confiança depositada em nós e deixamos uma marca indelével de excelência em cada obra que realizamos.
             </p>
             
-            <div className="space-y-4 mb-8">
-              <div className="flex items-center space-x-3">
-                <CheckCircle className="w-5 h-5 text-primary" />
-                <span>Licensed Professional Engineers</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <CheckCircle className="w-5 h-5 text-primary" />
-                <span>Sustainable Design Practices</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <CheckCircle className="w-5 h-5 text-primary" />
-                <span>Advanced CAD & BIM Technology</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <CheckCircle className="w-5 h-5 text-primary" />
-                <span>Code Compliance Expertise</span>
-              </div>
-            </div>
-            
-            <div className="mb-8">
-              <h3 className="font-semibold mb-4">Certifications & Qualifications</h3>
-              <div className="flex flex-wrap gap-2">
-                {certifications.map((cert, index) => (
-                  <Badge key={index} variant="secondary" className="bg-accent text-accent-foreground">
-                    {cert}
-                  </Badge>
-                ))}
-              </div>
-            </div>
-            
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
-              Learn More About Us
+            <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground">
+              <a href="#contact">
+                Fale Conosco
+              </a>
             </Button>
           </div>
           

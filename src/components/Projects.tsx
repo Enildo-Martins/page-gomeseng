@@ -1,44 +1,31 @@
-import { Card, CardContent } from "./ui/card";
-import { Badge } from "./ui/badge";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
+// Importando as imagens das bandeiras que você salvou
+import spFlag from '../assets/flags/SP.png';
+import mgFlag from '../assets/flags/MG.png';
+import prFlag from '../assets/flags/PR.png';
+import msFlag from '../assets/flags/MS.png';
+import mtFlag from '../assets/flags/MT.png';
+import dfFlag from '../assets/flags/DF.png';
+import goFlag from '../assets/flags/GO.png';
+import baFlag from '../assets/flags/BA.png';
+import ceFlag from '../assets/flags/CE.png';
+import piFlag from '../assets/flags/PI.png';
+import peFlag from '../assets/flags/PE.png';
+import toFlag from '../assets/flags/TO.png';
 
-const projects = [
-  {
-    title: "Modern Bridge Design",
-    category: "Infrastructure",
-    image: "https://images.unsplash.com/photo-1683205817608-f3818b3b9428?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBicmlkZ2UlMjBlbmdpbmVlcmluZ3xlbnwxfHx8fDE3NTgyOTgyMTl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    description: "Design and construction of a 500-meter cable-stayed bridge with innovative seismic isolation systems."
-  },
-  {
-    title: "Commercial Complex",
-    category: "Structural",
-    image: "https://images.unsplash.com/photo-1692910056923-de8686184b2c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHJ1Y3R1cmFsJTIwZW5naW5lZXJpbmclMjBidWlsZGluZ3xlbnwxfHx8fDE3NTgyOTgyMjJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    description: "25-story mixed-use development with sustainable design features and LEED Gold certification."
-  },
-  {
-    title: "Infrastructure Planning",
-    category: "Planning",
-    image: "https://images.unsplash.com/photo-1729551610640-e8adee1172e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbmdpbmVlcmluZyUyMGJsdWVwcmludHMlMjBwbGFuc3xlbnwxfHx8fDE3NTgyOTgyMjV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    description: "Comprehensive master planning for a 200-acre residential development with integrated utilities."
-  },
-  {
-    title: "Highway Expansion",
-    category: "Transportation",
-    image: "https://images.unsplash.com/photo-1638207849658-e57be0cdc208?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaXZpbCUyMGVuZ2luZWVyaW5nJTIwY29uc3RydWN0aW9uJTIwc2l0ZXxlbnwxfHx8fDE3NTgyOTgyMTZ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    description: "Design and project management for 15-mile highway expansion with environmental considerations."
-  },
-  {
-    title: "Water Treatment Facility",
-    category: "Environmental",
-    image: "https://images.unsplash.com/photo-1683205817608-f3818b3b9428?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBicmlkZ2UlMjBlbmdpbmVlcmluZ3xlbnwxfHx8fDE3NTgyOTgyMTl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    description: "Advanced water treatment facility serving 100,000 residents with cutting-edge filtration technology."
-  },
-  {
-    title: "Residential Development",
-    category: "Residential",
-    image: "https://images.unsplash.com/photo-1692910056923-de8686184b2c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHJ1Y3R1cmFsJTIwZW5naW5lZXJpbmclMjBidWlsZGluZ3xlbnwxfHx8fDE3NTgyOTgyMjJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    description: "Site development and infrastructure design for 500-unit sustainable housing community."
-  }
+// Array com os dados dos estados
+const states = [
+  { name: "São Paulo", flag: spFlag },
+  { name: "Minas Gerais", flag: mgFlag },
+  { name: "Paraná", flag: prFlag },
+  { name: "Mato Grosso do Sul", flag: msFlag },
+  { name: "Mato Grosso", flag: mtFlag },
+  { name: "Distrito Federal", flag: dfFlag },
+  { name: "Goiás", flag: goFlag },
+  { name: "Bahia", flag: baFlag },
+  { name: "Ceará", flag: ceFlag },
+  { name: "Piauí", flag: piFlag },
+  { name: "Pernambuco", flag: peFlag },
+  { name: "Tocantins", flag: toFlag }
 ];
 
 export function Projects() {
@@ -46,32 +33,25 @@ export function Projects() {
     <section id="projects" className="py-20 bg-secondary/50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">Featured Projects</h2>
+          <h2 className="text-4xl font-bold mb-4">Serviços Prestados em Todo o Brasil</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Explore our portfolio of successful engineering projects across various sectors
+            Temos orgulho de levar nossa expertise em engenharia para diversos estados, contribuindo para o desenvolvimento de grandes projetos pelo país.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <Card key={index} className="overflow-hidden bg-white border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-              <div className="aspect-video overflow-hidden">
-                <ImageWithFallback
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+        {/* Grid para exibir as bandeiras dos estados */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-x-8 gap-y-12">
+          {states.map((state, index) => (
+            <div key={index} className="flex flex-col items-center text-center group">
+              <div className="w-24 h-24 p-1 border-2 border-gray-200 rounded-full overflow-hidden flex items-center justify-center shadow-md transition-transform duration-300 group-hover:scale-110 group-hover:shadow-lg">
+                <img
+                  src={state.flag}
+                  alt={`Bandeira de ${state.name}`}
+                  className="w-full h-full object-cover rounded-full"
                 />
               </div>
-              <CardContent className="p-6">
-                <div className="flex items-center justify-between mb-3">
-                  <Badge variant="secondary" className="bg-accent text-accent-foreground">
-                    {project.category}
-                  </Badge>
-                </div>
-                <h3 className="font-semibold text-lg mb-3">{project.title}</h3>
-                <p className="text-muted-foreground text-sm">{project.description}</p>
-              </CardContent>
-            </Card>
+              <p className="mt-4 font-semibold text-muted-foreground">{state.name}</p>
+            </div>
           ))}
         </div>
       </div>
