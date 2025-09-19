@@ -8,14 +8,13 @@ export function FloatingSocialButtons() {
     const phoneNumber = "5517997731876"; 
     const message = "Olá! Tenho interesse nos serviços da GOMES Engenharia e gostaria de um orçamento.";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
   };
 
   const handleInstagramClick = () => {
-    // Substituir pelo @ real do cliente quando tiver
-    const instagramUsername = "gomesengenharia";
-    const instagramUrl = `https://www.instagram.com/${instagramUsername}`;
-    window.open(instagramUrl, '_blank');
+    // Link do Instagram do cliente
+    const instagramUrl = "https://www.instagram.com/gomes_engenhariaa?igsh=NTJmNnRqMTBtanBs";
+    window.open(instagramUrl, '_blank', 'noopener,noreferrer');
   };
 
   return (

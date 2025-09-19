@@ -1,9 +1,13 @@
 import React from 'react';
 import { Separator } from "./ui/separator";
-import { Facebook, Linkedin, Instagram } from "lucide-react";
+import { Linkedin, Instagram, MessageCircle } from "lucide-react"; // Adicionado MessageCircle para WhatsApp
 import logo from "../assets/logo-gomes.png";
 
 export function Footer() {
+  const whatsappNumber = "5517997731876";
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Olá! Tenho interesse nos serviços da GOMES Engenharia.")}`;
+  const instagramUrl = "https://www.instagram.com/gomes_engenhariaa?igsh=NTJmNnRqMTBtanBs";
+
   return (
     <footer className="bg-secondary/50 py-12">
       <div className="container mx-auto px-4">
@@ -13,10 +17,10 @@ export function Footer() {
             <p className="text-muted-foreground text-sm">
               Excelência em engenharia civil e agrimensura, com foco em usinas fotovoltaicas, topografia e terraplanagem.
             </p>
+            {/* ===== ÍCONES ATUALIZADOS ===== */}
             <div className="flex space-x-4">
-              <a href="#" aria-label="Facebook"><Facebook className="w-5 h-5 text-muted-foreground hover:text-primary cursor-pointer transition-colors" /></a>
-              <a href="#" aria-label="LinkedIn"><Linkedin className="w-5 h-5 text-muted-foreground hover:text-primary cursor-pointer transition-colors" /></a>
-              <a href="#" aria-label="Instagram"><Instagram className="w-5 h-5 text-muted-foreground hover:text-primary cursor-pointer transition-colors" /></a>
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><MessageCircle className="w-5 h-5 text-muted-foreground hover:text-primary cursor-pointer transition-colors" /></a>
+              <a href={instagramUrl} target="_blank" rel="noopener noreferrer" aria-label="Instagram"><Instagram className="w-5 h-5 text-muted-foreground hover:text-primary cursor-pointer transition-colors" /></a>
             </div>
           </div>
           
