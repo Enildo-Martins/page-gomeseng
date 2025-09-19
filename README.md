@@ -21,7 +21,7 @@ Este repositório contém o código-fonte da landing page oficial da GOMES Engen
 
 1.  **Clone o repositório:**
     ```bash
-    git clone [https://github.com/Enildo-Martins/page-gomeseng](https://github.com/Enildo-Martins/page-gomeseng)
+    git clone https://github.com/Enildo-Martins/page-gomeseng
     ```
 
 2.  **Navegue até a pasta do projeto:**
